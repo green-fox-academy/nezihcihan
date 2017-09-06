@@ -1,0 +1,43 @@
+body {
+    background-image: url("topography.png");
+    
+    font-family: "consolas";
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: right;
+}
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color:#ff0099
+}
+
+.img{
+    padding: 0% 0% 0% 10%; 
+}
+
+.software {
+    color:#ff0099;
+}
+
+a {
+    color: #FF0098;
+}
+
+.dots {
+    text-align: center;
+}
+div.two {
+    padding: 0% 10% 5% 10%;
+}
