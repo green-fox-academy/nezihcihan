@@ -1,0 +1,109 @@
+<html>
+    <head>
+      <link href="form.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <form action="/my-handling-form-page" method="post">
+            <div>
+                <div class="head">
+                    <h1>Profile</h1>
+                </div>
+                <div class="bottom">
+                    <div>
+                        <div>
+                            <h4>Personal Information                                
+                            </h4>
+                            <!-- PERSONAL INFORMATION -->
+                            <fieldset>
+                                <legend>Name</legend>
+                                <input type="name" placeholder="Name Surname" required />
+                                <span class="tick"></span>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Date of Birth</legend>
+                                <input type="birth" placeholder="day/month/year" required />
+                                <span class="tick"></span>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Your Gender</legend>
+                                <input type="radio" id="male" name="gender" />
+                                <label for="male">Male</label><br/>
+                                <input type="radio" id="female" name="gender" />
+                                <label for="female">Female</label>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Choose Your Favorite Brand</legend>
+                                <input type="checkbox" id="adidas" />
+                                <label for="adidas">Adidas</label><br/>
+                                <input type="checkbox" id="apple" />
+                                <label for="apple">Apple</label><br/>
+                                <input type="checkbox" id="cola" />
+                                <label for="cola">Coca-Cola</label><br/>
+                                <input type="checkbox" id="mazda" />
+                                <label for="mazda">Mazda</label><br/>
+                                <input type="checkbox" id="nike" />
+                                <label for="nike">Nike</label><br/>
+                                <input type="checkbox" id="opel" />
+                                <label for="opel">Opel</label><br/>
+                                <input type="checkbox" id="rayban" />
+                                <label for="rayban">Ray-Ban</label><br/>
+                                <input type="checkbox" id="starbuks" />
+                                <label for="starbuck">Starbucks</label><br/>
+                                <input type="checkbox" id="tesla" />
+                                <label for="tesla">Tesla</label><br/>
+                                <input type="checkbox" id="sony" />
+                                <label for="sony">Sony</label><br/>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div>
+                        <div><h4>Contact Details</h4>
+                            <fieldset>
+                                <legend>Telephone</legend>
+                                <input type="telephone" placeholder="+36 -- --- ---" required />
+                                <span class="tick"></span>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Email</legend>
+                                <input type="email" placeholder="sample@sample.com" required />
+                                <span class="tick"></span>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Facebook Profile</legend>
+                                <input type="facebook" placeholder="http://facebook.com/..." required />
+                                <span class="tick"></span>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Twitter Profile</legend>
+                                <input type="twitter" placeholder="http://twitter.com/..." required />
+                                <span class="tick"></span>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Communication Preference</legend>
+                                <p>How would you like to be contacted?</p>
+                                <select>
+                                    <option>By telephone</option>
+                                    <option>By email</option>
+                                    <option>By facebook</option>
+                                    <option>By twitter</option>      
+                                </select>
+                            </fieldset>  
+                        </div>
+                    </div>
+                </div>
+                <div>                                     
+                    <textarea name="comment" form="usrform">Enter your comments here...</textarea> 
+                    <fieldset>      
+                        <legend>Submit your file</legend>     
+                            <input type="file" name="fileupload" value="fileupload" id="fileupload"> 
+                            <label for="fileupload"></label> </br>
+                            <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  I Agree Terms & Coditions
+                            </br>
+                            <input type="submit" value="submit">  </br>      
+                            <input type="submit" value="cancel">                                    
+                    </fieldset>            
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+h1 {
+    color: orange;
+
+}
+h2 {
+    color: purple;
+}
+ol li:nth-child(1) {
+    color: #f442d7;   
+    text-decoration: underline;
+}
+ol li:nth-child(2) {
+    color: #f442d7;
+    text-decoration: underline;
+}
+ol li:nth-child(3) {
+    color: #f442d7;
+    text-decoration: underline;
+}
+ol li:nth-child(4) {
+    text-decoration: underline;
+}
