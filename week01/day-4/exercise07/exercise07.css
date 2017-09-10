@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+}
+div {
+    height: 40px;
+    width: 264px;
+    font-weight: bold;
+    color: blue;
+}
+div div {
+    height: 18px;
+    width: 264px;
+    border: 1px solid darkgreen;
+    font-weight: bold;
+    color: black;
+}
+p {
+    height: 18px;
+    width: 268px;
+    background-color: yellow;
+    color: blue;
+    margin: 18px 0px;
+}
+

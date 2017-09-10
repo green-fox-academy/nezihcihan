@@ -1,0 +1,30 @@
+
+div {
+    border: 2px solid #4285f4;
+    height: 98px;
+    width: 694px;   
+}
+div > p {
+    height: 50px;
+    width: 50px;
+    background-color: #4285f4;
+    border: none;
+    float: left;
+    margin: 25px 7.5px 25px 7.5px;
+}
+div:nth-child(2) p {
+    height: 50px;
+    width: 50px;
+    background-color: #7B4393;
+    border: none;
+    float: left;
+    margin: 25px 7.5px 25px 7.5px;
+}
+div:nth-child(2) {
+    background-color: #ff6347;
+    margin: 10px 0px;
+}
+div p:first-child {
+    margin: 25px 7.5px 25px 25px;
+}
+

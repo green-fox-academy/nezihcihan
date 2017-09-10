@@ -2,24 +2,16 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 h1 {
-    color: orange;
-
+    color: #f66341;
 }
 h2 {
     color: purple;
 }
-ol li:nth-child(1) {
-    color: #f442d7;   
-    text-decoration: underline;
-}
-ol li:nth-child(2) {
-    color: #f442d7;
-    text-decoration: underline;
-}
-ol li:nth-child(3) {
+ol {
     color: #f442d7;
     text-decoration: underline;
 }
 ol li:nth-child(4) {
+    color: black;   
     text-decoration: underline;
 }

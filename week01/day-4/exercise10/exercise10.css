@@ -1,0 +1,39 @@
+div {
+    width: 264px;
+    background-image: url(duck.png);
+    background-repeat: no-repeat;
+
+}
+div:nth-of-type(1) {
+    height: 105px;
+    background-size: 50px 50px;
+    background-color: #ff6347;
+    background-position: left;
+}
+div:nth-of-type(2) {
+    height: 175px;
+    background-size: 150px 150px;
+    background-color: #643579;
+    margin: 5px 0px 5px 0px;
+    background-position-x: 60px;
+    background-position-y: 20px;   
+}
+div:nth-of-type(3) {
+    height: 247px;
+    background-size: 50px 50px;
+    background-color: grey;
+    background-position-x: 210px;
+    background-position-y: 190px;
+    
+}
+p {
+    position: center;
+    padding: 18px;
+    text-align: center;
+    color: white;
+    font-family: Courier New, Courier, monospace;
+    font-size: 16px;
+}
+div {
+    position: center;
+}

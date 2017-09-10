@@ -1,37 +1,27 @@
-* {
+body {
     margin: 0;
 }
+div {
+    height: 290px;
+    width: 380px;
+    border: 15px solid blue;
+}
 div:nth-child(1) {
-    height: 287px;
-    width: 377px;
     background:#E67676;
-    border: 15px solid  #4285F4;
-    margin: 10px 0px 5px 10px;
+    margin: 0px 0px 5px 0px;
 }
 div:nth-child(2) {
-    height: 287px;
-    width: 377px;
     background:#A9E6E6;
-    border: 15px solid #E67676; 
-    margin: 5px 0px 0px 10px;
-       
 }
-
-
-p:nth-child(1) {
+p {
     font-size: 36px;
     color: #FFFFFF;
     font-family: sans-serif;
-    margin: 65px 144px 65px 144px;
-    
+    margin: 0; 
+    text-align: center;
+    line-height: 145px;
 }
-p:nth-child(2) {
-    font-size: 36px;
-    color: #FFFFFF;
-    font-family: sans-serif; 
-    margin: 65px 144px 65px 144px;
-    
-}
+
 
 
 
