@@ -9,7 +9,7 @@
 // - Print this two dimensional array to the output
 public class DiagonalMatrix {
     public static void main(String[] args) {
-        int [] [] arr = new int[4][4];
+        int [][] arr = new int[4][4];
         for(int row = 0; row < 4; row++){
             for(int col = 0; col < 4; col++) {
                 if(col == row){
