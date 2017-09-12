@@ -10,6 +10,6 @@ public class Greet {
         greet(al);
     }
     public static void greet(String word) {
-        System.out.println("Greetings dear, " + word " .");
+        System.out.println("Greetings dear, " + word);
     }
 }
