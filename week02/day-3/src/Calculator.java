@@ -12,7 +12,7 @@ public class Calculator {
         // It should work like this:
 
         // Start the program
-        // It prints: "Please type in the expression:"
+        // It lprints: "Please type in the expression:"
         System.out.println("Please type in the expression:");
         // Waits for the user input
         Scanner input = new Scanner(System.in);
