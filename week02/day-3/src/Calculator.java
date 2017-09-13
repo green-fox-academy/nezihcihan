@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Calculator {
     public static void main(String... args) {
         // Create a simple calculator application which reads the parameters from the prompt
@@ -21,16 +20,16 @@ public class Calculator {
         int firstNum = input.nextInt();
         int secNum = input.nextInt();
         if(cal == '+') {
-            System.out.println(firstNum + secNum);
+            System.out.println("Your result: " + firstNum + secNum);
         }
         else if(cal == '-') {
-            System.out.println(firstNum - secNum);
+            System.out.println("Your result: "firstNum - secNum);
         }
         else if(cal == '*') {
-            System.out.println(firstNum * secNum);
+            System.out.println("Your result: "firstNum * secNum);
         }
         else if(cal == '/') {
-            System.out.println(firstNum / secNum);
+            System.out.println("Your result: "firstNum / secNum);
         }
         else {
             System.out.println("Your entries are not valid!");
