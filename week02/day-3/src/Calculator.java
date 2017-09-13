@@ -20,16 +20,16 @@ public class Calculator {
         int firstNum = input.nextInt();
         int secNum = input.nextInt();
         if(cal == '+') {
-            System.out.println("Your result: " + firstNum + secNum);
+            System.out.println("Your result: " + (firstNum + secNum));
         }
         else if(cal == '-') {
-            System.out.println("Your result: "firstNum - secNum);
+            System.out.println("Your result: " + (firstNum - secNum));
         }
         else if(cal == '*') {
-            System.out.println("Your result: "firstNum * secNum);
+            System.out.println("Your result: " + (firstNum * secNum));
         }
         else if(cal == '/') {
-            System.out.println("Your result: "firstNum / secNum);
+            System.out.println("Your result: " + (firstNum / secNum));
         }
         else {
             System.out.println("Your entries are not valid!");
