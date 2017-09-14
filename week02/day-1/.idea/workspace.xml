@@ -32,11 +32,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DrawDiamond.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DrawDiamond.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DrawDiamond.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
+            <state relative-caret-position="154">
               <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DrawSquare.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DrawSquare.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -66,6 +76,7 @@
         <option value="$PROJECT_DIR$/src/ConditionalVariableMutation.java" />
         <option value="$PROJECT_DIR$/src/DrawPyramid.java" />
         <option value="$PROJECT_DIR$/src/DrawDiamond.java" />
+        <option value="$PROJECT_DIR$/src/DrawSquare.java" />
       </list>
     </option>
   </component>
@@ -135,21 +146,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DrawDiamond">
-    <configuration name="AverageOfInput" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="AverageOfInput" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="day-1" />
-      <envs />
-    </configuration>
+  <component name="RunManager" selected="Application.DrawSquare">
     <configuration name="ConditionalVariableMutation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="ConditionalVariableMutation" />
@@ -181,6 +178,20 @@
     <configuration name="DrawPyramid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="DrawPyramid" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="day-1" />
+      <envs />
+    </configuration>
+    <configuration name="DrawSquare" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="DrawSquare" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -288,19 +299,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.AverageOfInput" />
-      <item index="1" class="java.lang.String" itemvalue="Application.PrintBigger" />
-      <item index="2" class="java.lang.String" itemvalue="Application.ConditionalVariableMutation" />
-      <item index="3" class="java.lang.String" itemvalue="Application.DrawPyramid" />
-      <item index="4" class="java.lang.String" itemvalue="Application.DrawDiamond" />
+      <item index="0" class="java.lang.String" itemvalue="Application.PrintBigger" />
+      <item index="1" class="java.lang.String" itemvalue="Application.ConditionalVariableMutation" />
+      <item index="2" class="java.lang.String" itemvalue="Application.DrawPyramid" />
+      <item index="3" class="java.lang.String" itemvalue="Application.DrawDiamond" />
+      <item index="4" class="java.lang.String" itemvalue="Application.DrawSquare" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.DrawDiamond" />
-        <item index="1" class="java.lang.String" itemvalue="Application.DrawPyramid" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ConditionalVariableMutation" />
-        <item index="3" class="java.lang.String" itemvalue="Application.PrintBigger" />
-        <item index="4" class="java.lang.String" itemvalue="Application.AverageOfInput" />
+        <item index="0" class="java.lang.String" itemvalue="Application.DrawSquare" />
+        <item index="1" class="java.lang.String" itemvalue="Application.DrawDiamond" />
+        <item index="2" class="java.lang.String" itemvalue="Application.DrawPyramid" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ConditionalVariableMutation" />
+        <item index="4" class="java.lang.String" itemvalue="Application.PrintBigger" />
       </list>
     </recent_temporary>
   </component>
@@ -316,12 +327,12 @@
       <updated>1505402568467</updated>
       <workItem from="1505402571021" duration="127000" />
       <workItem from="1505412296728" duration="93000" />
-      <workItem from="1505412773411" duration="8436000" />
+      <workItem from="1505412773411" duration="9524000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8656000" />
+    <option name="totallyTimeSpent" value="9744000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -422,8 +433,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DrawDiamond.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="154">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DrawSquare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
           <folding />
         </state>
       </provider>
