@@ -10,7 +10,7 @@ public class StudentCounter{
         // Given this list of hashmaps...
         Map<String, Object> row0 = new HashMap<String, Object>();
         row0.put("name", "Rezso");
-        row0.put("age", 9.5);
+        row0.put("age", 9);
         row0.put("candies", 2);
         map.add( row0 );
         Map<String, Object> row1 = new HashMap<String, Object>();
@@ -42,21 +42,16 @@ public class StudentCounter{
         //  - Who has got more candies than 4 candies
         //  - Sum the age of people who have lass than 5 candies
         int[] candyArray = new int[6];
-        int[] sum = new int[6];
+        double sum = 0.00;
         for (int i = 0; i < candyArray.length; i++) {
             candyArray[i] = (Integer) (map.get(i).get("candies"));
             if(candyArray[i] > 4){
                 System.out.println(map.get(i).get("name") + " has more than 4 candies!");
             }
-            if (candyArray[i] < 4) {
-                sum[i] = (Integer) (map.get(i).get("age"));
+            if (candyArray[i] < 4){
+                sum += Double.parseDouble (map.get(i).get("age").toString());
             }
         }
-        int a = 0;
-        for (int i = 0; i < 6 ; i++) {
-            a += sum[i];
-        }
-        System.out.println(sum);
-
+        System.out.println("Sum of ages of the people who have less than 4 candies is :" + (int)sum);
     }
 }
