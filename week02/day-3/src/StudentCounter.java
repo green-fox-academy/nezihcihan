@@ -46,12 +46,12 @@ public class StudentCounter{
         for (int i = 0; i < candyArray.length; i++) {
             candyArray[i] = (Integer) (map.get(i).get("candies"));
             if(candyArray[i] > 4){
-                System.out.println(map.get(i).get("name") + " has more than 4 candies!");
+                System.out.println(map.get(i).get("name"));
             }
             if (candyArray[i] < 4){
                 sum += Double.parseDouble (map.get(i).get("age").toString());
             }
         }
-        System.out.println("Sum of ages of the people who have less than 4 candies is :" + (int)sum);
+        System.out.println("Sum of ages:" + (int)sum);
     }
 }
