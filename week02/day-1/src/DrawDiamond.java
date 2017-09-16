@@ -15,7 +15,7 @@ public class DrawDiamond {
     public static void main(String[] args) {
 
         drawDiamond(userInput());
-        
+
     }
     /**Method For User Input**/
 
