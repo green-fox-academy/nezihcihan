@@ -8,7 +8,7 @@ public class Subint {
     public static void main(String[] args) {
             searchingFunction(userInputNumberList(),userNumberForSearch());
     }
-    
+
     /** METHOD FOR USER INPUT LIST OF NUMBERS **/
     public static ArrayList<Integer> userInputNumberList(){
         System.out.println("Enter your number list and then PRESS X");
