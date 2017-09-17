@@ -16,7 +16,6 @@ public class Substr {
         String sentence = input.nextLine();
         return sentence;
     }
-
     /** METHOD FOR THE WORD TO BE SEARCHED **/
     public static String userInputSearch(){
         System.out.println("Enter your word to be searched.");
@@ -24,7 +23,6 @@ public class Substr {
         String search = input.nextLine();
         return search;
     }
-
     /** METHOD FOR SEARCHING WORD (OUTPUTS INDEX NUM.) **/
     public static void searchFunction(String sentence, String search) {
         if (sentence.contains(search)) {
