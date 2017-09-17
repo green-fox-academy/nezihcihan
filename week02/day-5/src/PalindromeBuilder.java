@@ -3,7 +3,7 @@ public class PalindromeBuilder {
     public static void main(String[] args) {
         palindromBuilder(userInput());
     }
-    
+
     /** METHOD FOR USER INPUT **/
     public static String userInput() {
         System.out.println("Enter a word!");
