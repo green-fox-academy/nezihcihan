@@ -42,6 +42,9 @@ public class Doubled {
         } catch (Exception e) {
             System.out.println("Could not write the file!");
         }
+        for (int i = 0; i < last.size() ; i++) {
+            System.out.print(last.get(i));
+        }
 
     }
 }
