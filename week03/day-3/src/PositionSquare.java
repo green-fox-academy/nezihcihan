@@ -11,9 +11,13 @@ public class PositionSquare {
       // the x and y coordinates of the square's top left corner
       // and draws a 50x50 square from that point.
       // draw 3 squares with that function.
-
-
-
+        position(graphics,50, 50);
+        position(graphics,100, 100);
+        position(graphics,50, 150);
+    }
+    public static void position(Graphics graphics,int a, int b){
+        graphics.setColor(Color.BLUE);
+        graphics.fillRect(a,b,50,50);
     }
 
 //    Don't touch the code below
