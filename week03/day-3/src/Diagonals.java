@@ -1,22 +1,25 @@
 import javax.swing.*;
 
 import java.awt.*;
+import java.util.Scanner;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Diagonals {
 
+
     public static void mainDraw(Graphics graphics){
       // draw the canvas' diagonals in green.
-        graphics.setColor(Color.BLUE);
-        graphics.drawLine(0,0,320,343);
-        graphics.setColor(Color.RED);
-        graphics.drawLine(0,343,320,0);
-
+        drawCenter(graphics,25,25);
 
     }
 
-//    Don't touch the code below
+    public static void drawCenter(Graphics graphics, int startX, int startY) {
+        graphics.setColor(Color.BLUE);
+        graphics.drawLine(startX, startY, 160, 171);
+    }
+
+    //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
 
