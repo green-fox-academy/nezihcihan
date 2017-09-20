@@ -11,9 +11,14 @@ public class CenterBoxFunction {
       // the square size
       // and draws a square of that size to the center of the canvas.
       // draw 3 squares with that function.
+        center(graphics,50);
+        center(graphics,25);
+        center(graphics,10);
 
-
-
+    }
+    public static void center(Graphics graphics,int size){
+        graphics.setColor(Color.BLUE);
+        graphics.fillRect(135-size,146-size,size,size);
     }
 
 //    Don't touch the code below
