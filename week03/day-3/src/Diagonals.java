@@ -10,16 +10,15 @@ public class Diagonals {
 
     public static void mainDraw(Graphics graphics){
       // draw the canvas' diagonals in green.
-        drawCenter(graphics,25,25);
-
-    }
-
-    public static void drawCenter(Graphics graphics, int startX, int startY) {
         graphics.setColor(Color.BLUE);
-        graphics.drawLine(startX, startY, 160, 171);
+        graphics.drawLine(0,0,320,343);
+        graphics.setColor(Color.RED);
+        graphics.drawLine(0,343,320,0);
+
+
     }
 
-    //    Don't touch the code below
+//    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
 
