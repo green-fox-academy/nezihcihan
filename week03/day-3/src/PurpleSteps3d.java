@@ -10,9 +10,18 @@ public class PurpleSteps3d {
       // reproduce this:
       // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
 
+            graphics.setColor(new Color(186,85,211));
+            graphics.fill3DRect(0,0,0,0, true);
+            graphics.fill3DRect(10,10,10,10,true);
+            graphics.fill3DRect(20,20,20,20,true);
+            graphics.fill3DRect(40,40,30,30,true);
+            graphics.fill3DRect(70,70,40,40,true);
+            graphics.fill3DRect(110,110,50,50,true);
+
+        }
 
 
-    }
+
 
 //    Don't touch the code below
     static int WIDTH = 320;
