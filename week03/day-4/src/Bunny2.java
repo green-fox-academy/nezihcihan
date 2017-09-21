@@ -16,6 +16,5 @@ public class Bunny2 {
         else {
             return 3 + ears((n-1) );
         }
-
     }
 }
