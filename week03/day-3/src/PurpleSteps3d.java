@@ -17,7 +17,6 @@ public class PurpleSteps3d {
             graphics.fill3DRect(40,40,30,30,true);
             graphics.fill3DRect(70,70,40,40,true);
             graphics.fill3DRect(110,110,50,50,true);
-
         }
 
 
