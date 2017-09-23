@@ -12,6 +12,8 @@ public class PurpleSteps {
         for (int i = 0; i < 200 ; i += 10) {
             graphics.setColor(new Color(186,85,211));
             graphics.fillRect(i,i,10,10);
+            graphics.setColor(Color.BLACK);
+            graphics.drawRect(i,i,10,10);
         }
     }
 
