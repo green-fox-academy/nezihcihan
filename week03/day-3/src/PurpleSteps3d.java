@@ -3,25 +3,19 @@ import javax.swing.*;
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
-
 public class PurpleSteps3d {
-
     public static void mainDraw(Graphics graphics){
       // reproduce this:
       // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
-
+        int add = 10;
+        for (int i = 1; i < 7 ; i++) {
             graphics.setColor(new Color(186,85,211));
-            graphics.fill3DRect(0,0,0,0, true);
-            graphics.fill3DRect(10,10,10,10,true);
-            graphics.fill3DRect(20,20,20,20,true);
-            graphics.fill3DRect(40,40,30,30,true);
-            graphics.fill3DRect(70,70,40,40,true);
-            graphics.fill3DRect(110,110,50,50,true);
+            graphics.fill3DRect(add, add,(i)*10,(i)*10,true);
+            graphics.setColor(Color.BLACK);
+            graphics.drawRect(add, add,(i)*10,(i)*10);
+            add = add +(i*10) ;
         }
-
-
-
-
+    }
 //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
