@@ -11,43 +11,33 @@ public class FunctionToCenter {
       // the x and y coordinates of the line's starting point
       // and draws a line from that point to the center of the canvas.
       // fill the canvas with lines from the edges, every 20 px, to the center.
-        line(graphics,20, 25);
-        /**for (int i = 0; i < 320; i +=20) {
-            graphics.drawLine(i,0,160,170);
-        }
-        for (int i = 0; i < 320 ; i +=20) {
-            graphics.drawLine(320,i,160,170);
-        }
-        for (int i = 320; i > 0 ; i -=20) {
-            graphics.drawLine(i,320,160,170);
-        }
-        for (int i = 320; i > 0 ; i -=20) {
-            graphics.drawLine(0,i,160,170);
-        }**/
+        line(graphics,29, 19);
     }
     public static void line(Graphics graphics, int x, int y) {
+        int w = 600;
+        int h =600;
+        for (int i = x; i < w - x; i += 20) {/**Top part**/
+            graphics.setColor(Color.RED);
+            graphics.drawLine(i, y, w/2, h/2);
+        }
+        for (int i = y; i < h- (y); i += 20) { /**left part**/
+            graphics.setColor(Color.BLUE);
+            graphics.drawLine(w - x, i, w/2, h/2);
+        }
+        for (int i = x; i <= w - x; i += 20) {/**down part**/
+            graphics.setColor(Color.GREEN);
+            graphics.drawLine(i, h - y, w/2, h/2);
+        }
+        for (int i = y; i <= h- y ; i += 20) {/** right part**/
+            graphics.setColor(Color.BLACK);
+            graphics.drawLine(x, i, w/2, h/2);
+        }
+    }
 
-        for (int i = x; i < 320 - (x); i += 20) {
-            graphics.drawLine(i, y, 160, 160);
-        }
-        for (int i = y; i < 320 - (y); i += 20) {
-            graphics.drawLine(320 - (x), i, 160, 160);
-        }
-        for (int i = 320 - x; i > 0; i -= 20) {
-            graphics.drawLine(i, 320 - y, 160, 160);
-        }
-        for (int i = 320 - y; i > 0; i -= 20) {
-            graphics.drawLine(x, i, 160, 160);
-        }
-    }
-    public static void draw(Graphics graphics,int a, int b){
-        graphics.setColor(Color.BLUE);
-        graphics.drawLine(a, b,160,170);
-    }
 
 //    Don't touch the code below
-    static int WIDTH = 320;
-    static int HEIGHT = 343;
+    static int WIDTH = 600;
+    static int HEIGHT = 600;
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");
         jFrame.setSize(new Dimension(WIDTH, HEIGHT));
