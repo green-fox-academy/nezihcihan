@@ -56,7 +56,13 @@ public class yellowTable {
                 }
             }
 
-
+    public static int factorialWithLoop(int n) {
+        int factorial = 1;
+        for (int i = 1; i  < n + 1; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
 
 
     //    Don't touch the code below
