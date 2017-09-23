@@ -9,33 +9,24 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import static javax.swing.JFrame.isDefaultLookAndFeelDecorated;
 
 public class RainbowBoxFunction {
-
     public static void mainDraw(Graphics graphics){
       // create a square drawing function that takes 2 parameters:
       // the square size, and the fill color,
       // and draws a square of that size and color to the center of the canvas.
       // create a loop that fills the canvas with rainbow colored squares.
-        //drawSquare(graphics,50,"BLACK");
-        String []color = {"Color.GREEN", "ORANGE", "YELLOW", "RED"};
-
-        for (int y = 0; y < 4 ; y++) {
-            for (int x = 0; x < 4 ; x++) {
-                graphics.fillRect(x*80,y*80,80,80);
-                graphics.setColor(Color.getColor(color[y]));
-            }
+      // red, orange, yellow, green, blue, indigo, violet
+        rainbow(graphics,300);
+    }
+    public static void rainbow(Graphics graphics, int size){
+        for (int x = 1; x <8; x++) {
+            Color[] ballColors = {Color.YELLOW, Color.RED, Color.GREEN, Color.YELLOW, Color.BLUE, Color.ORANGE,Color.RED};
+            graphics.fillRect(x*10,x*10,size-x*20,size-x*20);
+            graphics.setColor(ballColors[x-1]);
         }
-
-
-
-        //}
     }
-    public static void drawSquare(Graphics graphics,int size, String color){
-
-        graphics.fillRect(135-size,146-size,size,size);
-    }
-
 //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
@@ -53,8 +44,6 @@ public class RainbowBoxFunction {
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
             mainDraw(graphics);
-
         }
     }
-
 }

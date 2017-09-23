@@ -18,7 +18,7 @@ public class CenterBoxFunction {
     }
     public static void center(Graphics graphics,int size){
         graphics.setColor(Color.BLUE);
-        graphics.fillRect(135-size,146-size,size,size);
+        graphics.drawRect(135-size,146-size,size,size);
     }
 
 //    Don't touch the code below
