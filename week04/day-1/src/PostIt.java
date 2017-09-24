@@ -8,7 +8,7 @@ public class PostIt {
         this.text = text;
         this.textColor = textColor;
     }
-    
+
     public static void main(String[] args) {
         PostIt example1 = new PostIt("Orange", "Idea 1", "Blue text");
         PostIt example2 = new PostIt("Pink", "Awesome", "Black text");
