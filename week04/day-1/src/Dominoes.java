@@ -9,7 +9,7 @@ public class Dominoes {
         // eg: [2, 4], [4, 3], [3, 5] ...
         ArrayList<Domino> ordered = new ArrayList<>();
         ordered.add(dominoes.get(0));
-        for (int i = 0; i < dominoes.size() ; i++) {
+        for (int i = 0; i < dominoes.size()-1 ; i++) {
             int [] firstPair = ordered.get(i).getValues();
             for (int j = 0; j < dominoes.size() ; j++) {
                 int [] secondPair = dominoes.get(j).getValues();
