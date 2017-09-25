@@ -4,7 +4,8 @@ public class Counter {
 
     public Counter(){
         this.value = 0;
-        this.reset = this.value;
+        this.reset = this.value; // in order to set the values to initiation
+                                 // we match the reset value to start value with "this" reference.
     }
     public Counter(int value) {
         this.value = value;
