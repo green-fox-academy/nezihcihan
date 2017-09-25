@@ -7,6 +7,13 @@ public class Sharpie {
         this.width = width;
         this.inkAmount = 100;
     }
+    public Sharpie(float inkAmount){
+        this.inkAmount = inkAmount;
+    }
+    public float getContent(){
+        return inkAmount;
+    }
+
     public void use(int decrease){
         inkAmount -= decrease;
     }

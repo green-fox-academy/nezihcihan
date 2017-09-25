@@ -1,18 +1,19 @@
 public class Station {
 
     int gasAmount;
-    int capacity;
+    public Station(int gasAmount){
+        this.gasAmount = gasAmount;
+    }
 
-    public void refill(Car car){
+    public int [] refill(Car anyCar){
+         int[] gasAmountInCarandStaion = new int [2];
+         gasAmountInCarandStaion[0] = gasAmount - anyCar.capacity;
+         anyCar.gasAmount += 100;
+         gasAmountInCarandStaion[1] = anyCar.gasAmount;
+         return gasAmountInCarandStaion;
 
-        this.gasAmount = car.gasAmount +100;
-        this.capacity = car.capacity - 100;
     }
     public static void main(String[] args) {
-        Station myStation = new Station();
-        Car myCar = new Car();
-        myStation.refill(myCar);
-        System.out.println("Car gasAmount after refill: " + myStation.gasAmount);
-        System.out.println("Car refill capacity after refill: " + myStation.capacity);
+
     }
 }
