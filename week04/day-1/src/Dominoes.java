@@ -9,11 +9,11 @@ public class Dominoes {
         // eg: [2, 4], [4, 3], [3, 5] ...
         ArrayList<Domino> ordered = new ArrayList<>();
         ordered.add(dominoes.get(0));
-        for (int i = 0; i < dominoes.size()-1; i++) {
+        for (int i = 0; i < dominoes.size() ; i++) {
             int [] firstPair = ordered.get(i).getValues();
-            for (int j = 0; j < dominoes.size(); j++) {
-                int[] followingPair = dominoes.get(j).getValues();
-                if(firstPair[1] == followingPair[0]) {
+            for (int j = 0; j < dominoes.size() ; j++) {
+                int [] secondPair = dominoes.get(j).getValues();
+                if(firstPair[1] == secondPair[0]){
                     ordered.add(dominoes.get(j));
                 }
             }
