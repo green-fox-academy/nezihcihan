@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Dice {
@@ -14,7 +15,6 @@ public class Dice {
         }
         return dices;
     }
-
     public int[] getCurrent() {
         return dices;
     }
@@ -35,8 +35,11 @@ public class Dice {
 
     public static void main(String[] args) {
         Dice myDice = new Dice();
-        myDice.roll();
-
-        System.out.println(myDice.getCurrent());
+        for (int i = 0; i < 6 ; i++) {
+            while(myDice.getCurrent(i)!= 6) {
+                myDice.reroll();
+            }
+            System.out.print(myDice.getCurrent(i) + ", ");
+        }
     }
 }
