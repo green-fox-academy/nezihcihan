@@ -12,9 +12,7 @@ public class PallidaClass {
         this.className = className;
         this.students = new ArrayList<>();
         this.mentors = new ArrayList<>();
-
     }
-
     public void addStudent(Student member) {
         students.add(member);
     }
