@@ -17,7 +17,9 @@ public class TestInput {
         Mentor mentor = new Mentor();
         people.add(mentor);
         Sponsor sponsor = new Sponsor();
+        people.add(sponsor);
         Sponsor elon = new Sponsor("Elon Musk", 46, "male", "SpaceX");
+        people.add(elon);
 
         student.skipDays(3);
 
@@ -40,4 +42,4 @@ public class TestInput {
         badass.addMentor(gandhi);
         badass.info();
     }
-}
+        }
