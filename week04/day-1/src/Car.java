@@ -12,7 +12,7 @@ public class Car {
         Station shell = new Station(500);
         int[] gasAmountInCarAndStation = shell.refill(ford);
         System.out.println("Gas amount in Shell is " + gasAmountInCarAndStation[0]);
-        System.out.println("Gas in Ford car is " + gasAmountInCarAndStation[1]);
+        System.out.println("Gas in Ford car is  " + gasAmountInCarAndStation[1]);
     }
 
 }
