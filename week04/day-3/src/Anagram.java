@@ -9,7 +9,7 @@ public class Anagram {
         this.s2 = s2;
     }
     public boolean anagramMethod() {
-        //boolean status = false;
+
         if(s1.length() != s2.length()) {
             return false;
         }
@@ -21,6 +21,5 @@ public class Anagram {
             Arrays.sort(s2Array);
             return Arrays.equals(s1Array, s2Array);
         }
-
     }
 }
