@@ -51,5 +51,5 @@ public class Extension {
     public static void main(String[] args) {
         Extension object = new Extension();
         System.out.println(object.translate("ape"));
-    }//'a', 'u', 'o', 'e', 'i'
+    }
 }
