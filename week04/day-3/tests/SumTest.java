@@ -14,7 +14,8 @@ public class SumTest {
     Integer expected = 60;
 
     @Test
-    public void sumMethod() throws Exception {
+    public void sumMethodTest1() throws Exception {
         assertEquals(expected,testSum.sumMethod());
     }
+
 }
