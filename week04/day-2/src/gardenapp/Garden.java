@@ -8,6 +8,7 @@ public class Garden {
         this.garden= new ArrayList<>();
     }
     public void addPlant(Plant plant) {
+
         garden.add(plant);
     }
     public void giveWater(float water) {
@@ -22,7 +23,8 @@ public class Garden {
         }
         for (Plant sample : garden){
             if (sample.waterNeed()) {
-                sample.waterAmount += water/counter*sample.absorbPercent;
+                sample.waterAmount +=
+                water/counter*sample.absorbPercent;
             }
         }
         System.out.println("\nWatering with : " + water + " \n");

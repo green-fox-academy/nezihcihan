@@ -3,6 +3,7 @@ public class CountLetters {
 
     HashMap<Character, Integer> dictionary;
     public CountLetters() {
+
         dictionary = new HashMap<Character,Integer>();
     }
     public HashMap<Character,Integer> countLettersMethods(String sampleString) {

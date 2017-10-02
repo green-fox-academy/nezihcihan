@@ -19,7 +19,7 @@ public class GardenAppTest {
         purpleTree.showWaterNeed();
         orangeTree.showWaterNeed();
 
-        myGarden.giveWater(40); //can be checked also for watering amount of 70.
+        myGarden.giveWater(40);
 
         yellowFlower.showWaterNeed();
         blueFlower.showWaterNeed();
