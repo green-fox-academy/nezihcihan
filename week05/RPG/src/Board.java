@@ -13,13 +13,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board extends JComponent implements KeyListener {
-    String heroImage = "hero-down.png";
-    int PosX;
-    int PosY;
-    List<String> content = new ArrayList<>();
+    String heroImage = "assets/hero-down.png";
+    int heroX;
+    int heroY;
+    int[][] board = new int[][]{
+            {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+            {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
+            {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+            {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
+            {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
+            {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+            {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
+            {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+            {0, 0, 0, 1, 0, 1, 1, 0, 0, 0}
+    };
+
     public Board() {
-        PosX = 0;
-        PosY = 0;
+        heroX = 0;
+        heroY = 0;
 
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
@@ -28,30 +40,21 @@ public class Board extends JComponent implements KeyListener {
     @Override
     public void paint(Graphics graphics) {
         super.paint(graphics);
-        graphics.fillRect(PosX, PosY, 100, 100);
+        //graphics.fillRect(PosX, PosY, 100, 100);
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
-
-        Path sourcePath = Paths.get("assets/board.txt");
-        try {
-            content = Files.readAllLines(sourcePath);
-        } catch (IOException e) {
-            System.out.println("no content");
-        }
-
-        for (int row = 0; row < content.size() ; row++) {
-            for (int col = 0; col < content.size() ; col++) {
-                    if (content.get(col).charAt(row) == '0') {
-                        PositionedImage image = new PositionedImage("assets/floor.png", row * 72, col * 72);
-                        image.draw(graphics);
-                    }
-                    else if (content.get(col).charAt(row) == '1') {
-                        PositionedImage image = new PositionedImage("assets/wall.png", row * 72, col * 72);
-                        image.draw(graphics);
-                    }
+        for (int col = 0; col< 10 ; col++) {
+            for (int row = 0; row < 10 ; row++) {
+                    PositionedImage floor = new PositionedImage("assets/floor.png", row, col);
+                    PositionedImage wall = new PositionedImage("assets/wall.png", row, col);
+                if (board[row][col] == 0) {
+                    floor.draw(graphics);
+                } else if (board[row][col] == 1) {
+                    wall.draw(graphics);
+                }
             }
         }
-        PositionedImage hero = new PositionedImage("assets/"+ heroImage, PosX, PosY);
+        PositionedImage hero = new PositionedImage(heroImage, heroX, heroY);
         hero.draw(graphics);
 
     }
@@ -69,20 +72,30 @@ public class Board extends JComponent implements KeyListener {
     public void keyReleased(KeyEvent e) {
         // When the up or down keys hit, we change the position of our box
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            PosY -= 72;
-            heroImage = "hero-up.png";
+            heroImage = "assets/hero-up.png";
+            if (heroY != 0 && board[heroY - 1][heroX] != 1) {
+                heroY -= 1;
+            }
         }
         else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-            PosY += 72;
-            heroImage = "hero-down.png";
+
+            heroImage = "assets/hero-down.png";
+            if (heroY != 9 && board[heroY + 1][heroX] != 1) {
+                heroY += 1;
+            }
         }
         else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-            PosX -= 72;
-            heroImage = "hero-left.png";
+
+            heroImage = "assets/hero-left.png";
+            if (heroX != 0 && board[heroY][heroX - 1] != 1) {
+                heroX -= 1;
+            }
         }
         else if(e.getKeyCode() == KeyEvent.VK_RIGHT ) {
-            PosX += 72;
-            heroImage = "hero-right.png";
+            heroImage = "assets/hero-right.png";
+            if (heroY != 9 && board[heroY][heroX + 1] != 1) {
+                heroX += 1;
+            }
         }
         // and redraw to have a new picture with the new coordinates
         repaint();
