@@ -47,9 +47,9 @@ public class Board extends JComponent implements KeyListener {
             for (int row = 0; row < 10 ; row++) {
                     PositionedImage floor = new PositionedImage("assets/floor.png", row, col);
                     PositionedImage wall = new PositionedImage("assets/wall.png", row, col);
-                if (board[row][col] == 0) {
+                if (board[col][row] == 0) {
                     floor.draw(graphics);
-                } else if (board[row][col] == 1) {
+                } else if (board[col][row] == 1) {
                     wall.draw(graphics);
                 }
             }
@@ -93,7 +93,7 @@ public class Board extends JComponent implements KeyListener {
         }
         else if(e.getKeyCode() == KeyEvent.VK_RIGHT ) {
             heroImage = "assets/hero-right.png";
-            if (heroY != 9 && board[heroY][heroX + 1] != 1) {
+            if (heroX != 9 && board[heroY][heroX + 1] != 1) {
                 heroX += 1;
             }
         }
