@@ -34,16 +34,13 @@ public class Board extends JComponent implements KeyListener {
             {0, 0, 0, 1, 0, 1, 1, 0, 0, 0}
     };
 
-
     public Board() {
         heroX = 0;
         heroY = 0;
-
         // set the size of your draw board
-        setPreferredSize(new Dimension(720, 720));
+        setPreferredSize(new Dimension(720, 850));
         setVisible(true);
     }
-
     @Override
     public void paint(Graphics graphics) {
         super.paint(graphics);
@@ -72,6 +69,13 @@ public class Board extends JComponent implements KeyListener {
         skeleton3.wallBlocker();
         skeleton3.draw(graphics);
         boss.draw(graphics);
+
+        graphics.setColor(Color.WHITE);
+        graphics.fillRect(0,720,720,130);
+        Font myFont = new Font("LucidaSans", Font.PLAIN, 70);
+        graphics.setColor(Color.BLACK);
+        graphics.setFont (myFont);
+        graphics.drawString("ANYTHING",0,750);
     }
     // To be a KeyListener the class needs to have these 3 methods in it
     @Override
