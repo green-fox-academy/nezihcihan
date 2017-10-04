@@ -1,11 +1,6 @@
 import java.awt.*;
 
-public class Hero extends PositionedImage {
-    String Level;
-    int MaxHP;
-    int currentHP;
-    int DP;
-    int SP;
+public class Hero extends Character {
 
 
 

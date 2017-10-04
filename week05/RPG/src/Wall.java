@@ -1,8 +1,6 @@
-public class Wall extends Board {
-    int[][] board;
-
-    public Wall() {
-        super();
+public class Wall extends PositionedImage {
+    public Wall (String filename, int posX, int posY) {
+        super(filename,posX,posY);
     }
 
 }

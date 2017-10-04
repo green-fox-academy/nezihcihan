@@ -4,13 +4,14 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class PositionedImage {
+public class  PositionedImage {
 
     private static int WITDH = 72;
     private static int HEIGHT = 72;
 
     BufferedImage image;
     int posX, posY;
+
 
     public PositionedImage(String filename, int posX, int posY) {
         this.posX = posX;
