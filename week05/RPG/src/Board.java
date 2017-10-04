@@ -13,21 +13,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board extends JComponent implements KeyListener {
-    String heroImage = "assets/hero-down.png";
-    int heroX;
-    int heroY;
-    Floor floor = new Floor();
 
-    Hero hero = new Hero();
-    Skeleton skeleton1 = new Skeleton();
-    Skeleton skeleton2 = new Skeleton();
-    Skeleton skeleton3 = new Skeleton();
-    Boss boss = new Boss();
 
+    int tileSize;
+    Floor tiles = new Floor();
+
+    Hero hero = new Hero(0,0);
+    Skeleton skeleton1;
+    Skeleton skeleton2;
+    Skeleton skeleton3;
+    Boss boss;
 
     public Board() {
-        heroX = 0;
-        heroY = 0;
+        tileSize = 72;
+        skeleton1= new Skeleton();
+        skeleton2= new Skeleton();
+        skeleton3= new Skeleton();
+        boss = new Boss();
+
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 850));
         setVisible(true);
@@ -38,9 +41,9 @@ public class Board extends JComponent implements KeyListener {
         //graphics.fillRect(PosX, PosY, 100, 100);
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
-        floor.fillFloor(graphics);
+        tiles.fillFloor(graphics);
 
-        PositionedImage hero = new PositionedImage(heroImage, heroX, heroY);
+
         hero.draw(graphics);
 
         skeleton1.draw(graphics);
@@ -68,31 +71,24 @@ public class Board extends JComponent implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         // When the up or down keys hit, we change the position of our box
-        if (e.getKeyCode() == KeyEvent.VK_UP) {
-            heroImage = "assets/hero-up.png";
-            if (heroY != 0 && floor.board[heroY - 1][heroX] != 1) {
-                heroY -= 1;
-            }
-        }
-        else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+        int x = hero.posX / tileSize;
+        int y = hero.posY / tileSize;
+        if (e.getKeyCode() == KeyEvent.VK_UP && hero.posY >= tileSize && !tiles.isWall(x, y - 1)) {
+            hero.moveUp();
 
-            heroImage = "assets/hero-down.png";
-            if (heroY != 9 && floor.board[heroY + 1][heroX] != 1) {
-                heroY += 1;
-            }
         }
-        else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+        else if(e.getKeyCode() == KeyEvent.VK_DOWN && hero.posY < tileSize * 9 && !tiles
+                .isWall(x, y + 1)) {
+            hero.moveDown();
 
-            heroImage = "assets/hero-left.png";
-            if (heroX != 0 && floor.board[heroY][heroX - 1] != 1) {
-                heroX -= 1;
-            }
         }
-        else if(e.getKeyCode() == KeyEvent.VK_RIGHT ) {
-            heroImage = "assets/hero-right.png";
-            if (heroX != 9 && floor.board[heroY][heroX + 1] != 1) {
-                heroX += 1;
-            }
+        else if(e.getKeyCode() == KeyEvent.VK_LEFT  && hero.posX >= tileSize && !tiles.isWall(x - 1, y)) {
+            hero.moveLeft();
+
+        }
+        else if(e.getKeyCode() == KeyEvent.VK_RIGHT && hero.posX < tileSize * 9 && !tiles.isWall(x + 1, y)) {
+            hero.moveRight();
+
         }
         // and redraw to have a new picture with the new coordinates
         repaint();
