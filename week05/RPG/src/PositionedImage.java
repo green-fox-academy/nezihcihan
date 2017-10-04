@@ -6,6 +6,9 @@ import java.io.IOException;
 
 public class PositionedImage {
 
+    private static int WITDH = 72;
+    private static int HEIGHT = 72;
+
     BufferedImage image;
     int posX, posY;
 
@@ -20,7 +23,7 @@ public class PositionedImage {
     }
     public void draw(Graphics graphics) {
         if (image != null) {
-            graphics.drawImage(image, posX * 72, posY * 72, null);
+            graphics.drawImage(image, posX * WITDH, posY * HEIGHT, null);
         }
     }
 }

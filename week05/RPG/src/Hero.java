@@ -1,3 +1,8 @@
-public class Hero extends Character {
+import java.awt.*;
 
+public class Hero extends PositionedImage {
+
+    public Hero() {
+        super("assets/hero-down.png",0,0);
+    }
 }

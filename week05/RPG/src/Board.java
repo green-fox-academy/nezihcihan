@@ -16,7 +16,12 @@ public class Board extends JComponent implements KeyListener {
     String heroImage = "assets/hero-down.png";
     int heroX;
     int heroY;
-    int[][] board = new int[][]{
+    Hero hero = new Hero();
+    Skeleton skeleton1 = new Skeleton();
+    Skeleton skeleton2 = new Skeleton();
+    Skeleton skeleton3 = new Skeleton();
+    Boss boss = new Boss();
+    int[][] board = new int[][] {
             {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
             {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
             {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
@@ -29,6 +34,7 @@ public class Board extends JComponent implements KeyListener {
             {0, 0, 0, 1, 0, 1, 1, 0, 0, 0}
     };
 
+
     public Board() {
         heroX = 0;
         heroY = 0;
@@ -37,6 +43,7 @@ public class Board extends JComponent implements KeyListener {
         setPreferredSize(new Dimension(720, 720));
         setVisible(true);
     }
+
     @Override
     public void paint(Graphics graphics) {
         super.paint(graphics);
@@ -49,21 +56,27 @@ public class Board extends JComponent implements KeyListener {
                     PositionedImage wall = new PositionedImage("assets/wall.png", row, col);
                 if (board[col][row] == 0) {
                     floor.draw(graphics);
-                } else if (board[col][row] == 1) {
+                } else {
                     wall.draw(graphics);
                 }
             }
         }
         PositionedImage hero = new PositionedImage(heroImage, heroX, heroY);
         hero.draw(graphics);
+        skeleton1.wallBlocker();
+        skeleton1.draw(graphics);
 
+        skeleton2.wallBlocker();
+        skeleton2.draw(graphics);
+
+        skeleton3.wallBlocker();
+        skeleton3.draw(graphics);
+        boss.draw(graphics);
     }
-
     // To be a KeyListener the class needs to have these 3 methods in it
     @Override
     public void keyTyped(KeyEvent e) {
     }
-
     @Override
     public void keyPressed(KeyEvent e) {
     }
