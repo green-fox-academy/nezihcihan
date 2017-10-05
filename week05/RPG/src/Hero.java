@@ -3,9 +3,8 @@ import java.awt.*;
 public class Hero extends Character {
     int moveCount;
 
-
-    public Hero(int posX, int posY) {
-        super("assets/hero-down.png",posX,posY);
+    public Hero() {
+        super("assets/hero-down.png",0,0);
         this.hp = 20 + 3 * d6;
         this.dp = 2 * d6;
         this. sp = 5+ d6;
@@ -16,7 +15,6 @@ public class Hero extends Character {
         setImage("assets/hero-up.png");
         moveCount++;
     }
-
     public void moveDown() {
         this.posY += TILESIZE;
         setImage("assets/hero-down.png");

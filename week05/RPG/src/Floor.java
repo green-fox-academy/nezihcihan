@@ -1,7 +1,7 @@
 import java.awt.*;
 
 public class Floor {
-    public static int TILESIZE = 72;
+    private int TILESIZE = 72;
     int[][] board = new int[][] {
             {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
             {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},

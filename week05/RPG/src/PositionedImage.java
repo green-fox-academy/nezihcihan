@@ -9,8 +9,6 @@ public class  PositionedImage {
     public static int TILESIZE = 72;
     BufferedImage image;
     int posX, posY;
-    public PositionedImage() {
-    }
 
     public PositionedImage(String filename, int posX, int posY) {
         this.posX = posX;
@@ -41,11 +39,9 @@ public class  PositionedImage {
         this.posY = posY;
     }
 
-
     public int getPosX() {
         return posX;
     }
-
     public int getPosY() {
 
         return posY;
