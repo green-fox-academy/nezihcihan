@@ -17,5 +17,9 @@ public class Todo {
         Collections.sort(dominoes);
         System.out.println(dominoes);
 
+        for(Domino d : dominoes) {
+            d.printAllFields();
+        }
+
     }
 }

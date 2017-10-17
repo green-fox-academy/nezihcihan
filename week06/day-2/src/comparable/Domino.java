@@ -1,9 +1,10 @@
 package comparable;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Domino implements Comparable<Domino>{
+public class Domino implements Comparable<Domino>,Printable {
 
 
     private final int[] values;
@@ -30,5 +31,10 @@ public class Domino implements Comparable<Domino>{
         else {
             return this.values[1] - d.values[1];
         }
+    }
+
+    @Override
+    public void printAllFields() {
+        System.out.print(toString());
     }
 }
