@@ -16,7 +16,11 @@ public class Shifter implements CharSequence {
 
     @Override
     public char charAt(int index) {
-        return s.charAt(index+n);
+        if(this.n + index > s.length()-1){
+            return s.charAt((index+n) % s.length());
+        } else {
+            return s.charAt(index+n);
+        }
     }
 
     @Override
