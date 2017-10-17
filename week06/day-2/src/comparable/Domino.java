@@ -24,11 +24,11 @@ public class Domino implements Comparable<Domino>{
 
     @Override
     public int compareTo(Domino d) {
-        if(values[0] != d.values[0]) {
-            return values[0] - d.values[0];
+        if(this.values[0] != d.values[0]) {
+            return this.values[0] - d.values[0];
         }
         else {
-            return values[1] - d.values[1];
+            return this.values[1] - d.values[1];
         }
     }
 }
