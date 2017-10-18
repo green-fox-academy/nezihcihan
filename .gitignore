@@ -4,7 +4,7 @@ out
 *.iml
 *.gf
 *.json
-
+*.gradle/
 ### Gradle ###
 .gradle
 **/build/
