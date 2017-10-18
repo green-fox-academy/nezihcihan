@@ -22,7 +22,6 @@ public class Shifter implements CharSequence {
             return s.charAt(index+n);
         }
     }
-
     @Override
     public CharSequence subSequence(int start, int end) {
         return null;
