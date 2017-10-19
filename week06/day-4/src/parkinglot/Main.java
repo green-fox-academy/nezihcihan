@@ -8,5 +8,6 @@ public class Main {
         mycars.showAllCars();
         mycars.countSameTypes();
         mycars.countSameColors();
+        mycars.mostFrequentCar();
     }
 }

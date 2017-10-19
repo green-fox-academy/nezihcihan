@@ -71,12 +71,24 @@ public class Car {
         }
     }
     public void mostFrequentCar() {
-        Map<Car,Integer> map = new HashMap<Car, Integer>();
-        for(int i=0;i<carList.size();i++){
-            Integer count = map.get(carList.get(i));
-            map.put(carList.get(i), count==null?1:count+1);   //auto boxing and count
+        HashMap<String, Integer> carMap = new HashMap<>();
+        for (int i = 0; i < carList.size(); i++) {
+            String car = carList.get(i).color.toString() + " " + carList.get(i).type.toString();
+            if (carMap.containsKey(car)) {
+                int counter = carMap.get(car);
+                carMap.put(car, ++counter);
+            }
+            else {
+                carMap.put(car, 1);
+            }
         }
-        System.out.println(map);
+        Map.Entry<String, Integer> mostCommon = null;
+        for (Map.Entry<String, Integer> car : carMap.entrySet()) {
+            if ((mostCommon == null) || car.getValue() > mostCommon.getValue()) {
+                mostCommon= car;
+            }
+        }
+        System.out.println("=== MOST FREQUENT CAR ===\n" + mostCommon.getKey());
     }
     @Override
     public String toString() {
