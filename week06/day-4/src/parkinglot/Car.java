@@ -26,10 +26,12 @@ public class Car {
     }
 
     public Type getType() {
+
         return type;
     }
 
     public Color getColor() {
+
         return color;
     }
 }
