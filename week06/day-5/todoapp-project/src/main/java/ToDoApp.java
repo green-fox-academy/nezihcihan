@@ -1,7 +1,7 @@
 public class ToDoApp {
 
     public static void main(String[] args) {
-        ToDo functions = new ToDo();
+        Task functions = new Task();
 
         if (args.length == 0) {
             functions.printUsage();

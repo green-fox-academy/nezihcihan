@@ -4,14 +4,17 @@ import java.util.*;
 public class Car {
 
     public enum Type{
-        FORD, BWM, AUDI, RENAULT,MERCEDES,CITROEN,VOLKSWAGEN,JEEP,HYUNDAI,KIA, FERRARI;
+        FORD, BWM, AUDI, RENAULT,MERCEDES,CITROEN,
+        VOLKSWAGEN,JEEP,HYUNDAI,KIA, FERRARI;
+
         public static Type getRandomType() {
             Random random = new Random();
             return values()[random.nextInt(values().length)];
         }
     }
     public enum Color{
-        BLACK, WHITE, GREY, BLUE, RED, YELLOW, LIGHTBLUE, GREEN, BROWN, PINK, PURPLE;
+        BLACK, WHITE, GREY, BLUE, RED, YELLOW,
+        LIGHTBLUE, GREEN, BROWN, PINK, PURPLE;
         public static Color getRandomColor() {
             Random random = new Random();
             return values()[random.nextInt(values().length)];
