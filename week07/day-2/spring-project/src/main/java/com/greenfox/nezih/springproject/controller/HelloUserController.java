@@ -7,12 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class HelloUserController {
 
     @RequestMapping("/greeting2")
     public List<Greeting> greetWithName(@RequestParam(name = "name") String name) {
+
         return Arrays.asList(new Greeting("Hello " + name));
+
     }
 }
