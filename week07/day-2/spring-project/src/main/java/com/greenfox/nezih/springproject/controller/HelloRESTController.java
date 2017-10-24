@@ -12,9 +12,7 @@ public class HelloRESTController {
     @RequestMapping("/greeting")
     public List<Greeting> greeting() {
         return Arrays.asList(
-                new Greeting(1,"Hello world")
+                new Greeting("Hello world")
         );
     }
-
-
 }

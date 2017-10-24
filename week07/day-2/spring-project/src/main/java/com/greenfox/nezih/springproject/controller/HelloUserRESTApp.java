@@ -12,6 +12,6 @@ public class HelloUserRESTApp {
 
     @RequestMapping("/greeting2")
     public List<Greeting> greetWithName(@RequestParam(name = "name") String name) {
-        return Arrays.asList(new Greeting(1,"Hello " + name));
+        return Arrays.asList(new Greeting("Hello " + name));
     }
 }
