@@ -1,4 +1,4 @@
-package com.greenfox.nezih.springproject.controller;
+package com.greenfox.nezih.springproject;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
