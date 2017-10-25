@@ -2,21 +2,19 @@ package com.greenfox.nezih.bankofsimba.model;
 import java.text.DecimalFormat;
 
 public class BankAccount {
-    //Add the fields name, balance, animalType in it
 
     public String name;
     public double balance;
     public String animalType;
     public boolean isKing;
-    public boolean isGood;
+    public String type;
 
-    public BankAccount(String name, double balance, String animalType, boolean isKing, boolean isGood) {
+    public BankAccount(String name, double balance, String animalType, boolean isKing, String type) {
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.isKing= isKing;
-        this.isGood = isGood;
-
+        this.type= type;
     }
 
     public String getName() {
@@ -47,8 +45,7 @@ public class BankAccount {
         return isKing;
     }
 
-    //    @Override
-//    public String toString() {
-//        return  name + balance + animalType;
-//    }
+    public String getType() {
+        return type;
+    }
 }
