@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<p  th:text="'Your Balance: '  + ${#numbers.formatDecimal(balance, 0, 'DEFAULT', 2, 'DEFAULT')} + 'Zebra' + ' Name: ' + ${name} + ' Animal Type: ' + ${animalType} "/>
+</body>
+</html>
