@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
     <title>Thymeleaf Exercise #</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
 </head>
 <body>
-<p>
-    <tr th:each="account, itrStat: ${accounts}">
-        <td th:text="${itrStat.index}">1 </td>
-        <td th:text="${account.name}" />
-        <td th:text="${account.balance}" />
+<table>
+    <tr th:each="account, itrStat: ${accounts}" th:style="${account.isKing()}? 'color:red'">
+
+        <td th:text="${itrStat.index}"> 1 </td>
+        <td th:text="${account.name}"   />
+        <td th:text="${account.balance}"/>
         <td th:text="${account.animalType}" />
+
     </tr>
-</p>
+</table>
 </body>
 </html>

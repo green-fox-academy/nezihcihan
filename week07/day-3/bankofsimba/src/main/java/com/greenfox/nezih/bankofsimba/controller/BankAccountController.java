@@ -13,7 +13,7 @@ public class BankAccountController {
 
     @GetMapping("/account")
     public String account(Model model) {
-        BankAccount account = new BankAccount("Simba",2000,"lion");
+        BankAccount account = new BankAccount("Simba",2000,"lion",false,true);
         model.addAttribute("balance", account.balance);
         model.addAttribute("name", account.name);
         model.addAttribute("animalType", account.animalType);
@@ -34,12 +34,14 @@ public class BankAccountController {
     @RequestMapping("/multiple")
     public String listAccounts(Model model) {
         ArrayList<BankAccount> accountList = new ArrayList<>();
-        BankAccount accountSimba = new BankAccount("Simba",2000,"lion");
-        BankAccount accountScar = new BankAccount("Scar",1500,"lion");
-        BankAccount accountPumba = new BankAccount("Pumba",1000,"pig");
+        BankAccount accountSimba = new BankAccount("Simba",2000,"lion",false,true);
+        BankAccount accountScar = new BankAccount("Scar",1500,"lion",false,false);
+        BankAccount accountPumba = new BankAccount("Pumba",1000,"pig",false,false);
+        BankAccount accountKing = new BankAccount("King",5000,"lion",true,false);
         accountList.add(accountSimba);
         accountList.add(accountScar);
         accountList.add(accountPumba);
+        accountList.add(accountKing);
         model.addAttribute("accounts", accountList);
         return "multiple";
     }
