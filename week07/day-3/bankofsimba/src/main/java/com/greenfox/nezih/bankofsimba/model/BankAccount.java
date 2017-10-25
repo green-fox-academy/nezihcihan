@@ -40,6 +40,6 @@ public class BankAccount {
 
 //    @Override
 //    public String toString() {
-//        return " BankAccount - " + "Name: " + name + ", Balance: " + balance +", Animal Type: " + animalType;
+//        return  name + balance + animalType;
 //    }
 }

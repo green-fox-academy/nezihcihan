@@ -6,7 +6,12 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<p  th:text=" ${message} "/>
-<p  th:utext=" ${message} "/>
+<p>
+    <tr th:each="account: ${accounts}">
+        <td th:text="${account.name}" />
+        <td th:text="${account.balance}" />
+        <td th:text="${account.animalType}" />
+    </tr>
+</p>
 </body>
 </html>
