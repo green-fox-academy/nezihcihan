@@ -4,11 +4,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class RedConfig  {
+public class ColorConfig  {
     @Bean
-    public RedColor redColor() {
-
+    public MyColor redColor() {
         return new RedColor();
     }
-
+    @Bean
+    public MyColor blueColor() {
+        return new BlueColor();
+    }
 }

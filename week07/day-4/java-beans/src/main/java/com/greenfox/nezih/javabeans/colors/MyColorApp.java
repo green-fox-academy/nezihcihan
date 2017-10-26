@@ -5,8 +5,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class MyColorApp {
     public static void main(String[] args) {
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(RedConfig.class);
-        RedColor myColor = ctx.getBean(RedColor.class);
-        myColor.printColor();
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(ColorConfig.class);
+        MyColor redColor = ctx.getBean(RedColor.class);
+        redColor.printColor();
+        MyColor blueColor = ctx.getBean(BlueColor.class);
+        blueColor.printColor();
     }
 }
