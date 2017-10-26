@@ -1,4 +1,4 @@
-package com.greenfox.nezih.javabeans.modules;
+package com.greenfox.nezih.javabeans.helloworld;
 
 public class HelloWorld {
     private String message;

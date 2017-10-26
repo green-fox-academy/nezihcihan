@@ -1,4 +1,4 @@
-package com.greenfox.nezih.javabeans.modules;
+package com.greenfox.nezih.javabeans.helloworld;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
@@ -10,5 +10,6 @@ public class HelloWorldApplication {
         HelloWorld helloWorld = ctx.getBean(HelloWorld.class);
         helloWorld.setMessage("Hello World!");
         helloWorld.getMessage();
+
     }
 }
