@@ -14,7 +14,7 @@ public class MsgServiceApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MsgServiceApplication.class, args);
-		
+
 	}
 	@Override
 	public void run(String... args) throws Exception {
