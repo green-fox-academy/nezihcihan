@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="/style.css"/>
+    <title>Fox Club</title>
+</head>
+<body>
+<h3>
+
+    <a th:href="@{'../information'}">Information</a>
+    <p></p>
+    <a th:href="@{'../nutrition'}">Nutrition Shop</a>
+    <p></p>
+    <a th:href="@{'../tricks'}">Trick Center</a>
+
+</h3>
+<h1 th:text="| Teach tricks to ${fox.name} |">.</h1>
+
+<table>
+    <form th:action="@{/addtrick}" th:object="${fox.newTricks}" method="post">
+        <tr>
+            <th>Tricks</th>
+            <td>
+                <select id="trick" th:field="${fox.newTricks}">
+                    <option th:each="trick : ${fox.newTricks}"
+                            th:value="${trick}"
+                            th:text="${trick}">Learned Tricks</option>
+                </select>
+            </td>
+            <td><input type="submit" value="Learn"/></td>
+        </tr>
+    </form>
+</table>
+
+    <span th:if="${fox.trickList.size()} == 0" th:text="|You know zero tricks. |"></span>
+    <span></span>
+    <table>
+        <tr th:each="trick, itrStat: ${fox.trickList}" >
+            <td th:text="${itrStat.index + 1}"/>
+            <td th:text="${trick}"/>
+        </tr>
+    </table>
+    <td each="trick : ${fox.trickList}" th:value="${trick}" th:text=" ${trick}"/>
+
+</body>
+</html>

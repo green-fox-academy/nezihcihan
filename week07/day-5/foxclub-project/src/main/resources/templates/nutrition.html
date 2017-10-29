@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="/style.css"/>
+    <title>Fox Club</title>
+</head>
+<body>
+<h3>
+    <a th:href="@{'../information'}">Information</a>
+    <p></p>
+    <a th:href="@{'../nutrition'}">Nutrition Shop</a>
+    <p></p>
+    <a th:href="@{'../tricks'}">Trick Center</a>
+</h3>
+<h1 th:text="| Change ${fox.name} 's diet! |">.</h1>
+<table>
+    <form th:action="@{/addnutrition}" th:object="${fox}" method="post">
+        <tr>
+            <th>Food</th>
+            <td>
+                <select id="food" th:field="${fox.food}">
+                    <option th:each="food : ${fox.foodList}"
+                            th:value="${food}"
+                            th:text="${food}">Food</option>
+                </select>
+            </td>
+            <th>Drink</th>
+            <td>
+                <select id="drink" th:field="${fox.drink}">
+                    <option th:each="drink : ${fox.drinkList}"
+                            th:value="${drink}"
+                            th:text="${drink}">Drink</option>
+                </select>
+            </td>
+            <td><input type="submit" value="change"/></td>
+        </tr>
+    </form>
+</table>
+</body>
+</html>
