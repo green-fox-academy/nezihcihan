@@ -38,12 +38,5 @@ public class TodoController {
         repository.delete(id);
         return  new ModelAndView("redirect:/todo/");
     }
-
-//    @RequestMapping(value = "/addlist", method = RequestMethod.POST)
-//    public String addTodo(RequestParam String title) {
-//        repository.save()
-//        return "redirect:todo/list";
-//    }
-
 }
 

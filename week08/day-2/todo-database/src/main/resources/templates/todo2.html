@@ -23,17 +23,18 @@
         <th>DONE</th>
         <th>URGENT</th>
     </tr>
-    <tr data-th-each="todo : ${todos}"   >
+    <tr data-th-each="todo : ${todos}">
         <td data-th-text="${todo.id}"   />
         <td data-th-text="${todo.title}"   />
         <td data-th-text="${todo.isDone}"   />
         <td data-th-text="${todo.isUrgent}"   />
 
         <td>
-            <a th:href="@{'/todo/{id}/delete'(id=${todo.id})}" class="delete" th:attr="name=${todo.title}">
+            <a th:href="@{'/todo/{id}/delete'(id=${todo.id})}" class="delete" th:attr="name=${todo}">
                 <span class="fa-stack">
                     <i class="glyphicon glyphicon-trash"></i>
                 </span>
+                <button type="reset" id="submit" class="btn btn primary">delete</button>
             </a>
         </td>
     </tr>
