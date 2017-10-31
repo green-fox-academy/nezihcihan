@@ -25,3 +25,4 @@ public class TodosApplication implements CommandLineRunner {
 		repository.save(new Todo("I have to learn Object Relational Mapping"));
 	}
 }
+

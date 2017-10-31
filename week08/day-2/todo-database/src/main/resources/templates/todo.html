@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Todo App</title>
+    <tr>
+        <h1>Todos for Today:</h1>
+    </tr>
+</head>
+<body>
+    <ul data-th-each="todo : ${todos}">
+        <li data-th-text="${todo.title}"></li>
+    </ul>
+</body>
+</html>
