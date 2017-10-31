@@ -38,5 +38,22 @@ public class TodoController {
         repository.delete(id);
         return  new ModelAndView("redirect:/todo/");
     }
+
+    @RequestMapping(value="/update", method = RequestMethod.POST)
+    public ModelAndView update(@RequestParam("id") long id,
+                               @RequestParam("message") String title) {
+        Todo todo = repository.findOne(id);
+        todo.setTitle(title);
+        repository.equals(todo);
+        return new ModelAndView("redirect:/todo/");
+    }
+
+    @RequestMapping(value="/{id}/edit", method = RequestMethod.GET)
+    public String edit(@PathVariable long id, Model model) {
+        Todo todo = repository.findOne(id);
+        model.addAttribute("todo", todo);
+        repository.equals(todo);
+        return "edit";
+    }
 }
 
