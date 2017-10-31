@@ -22,5 +22,6 @@ public class TodosApplication implements CommandLineRunner {
 		repository.save(new Todo("Finish H2 workshop1"));
 		repository.save(new Todo("Finish JPA workshop2"));
 		repository.save(new Todo("Create a CRUD project"));
+		repository.save(new Todo("I have to learn Object Relational Mapping"));
 	}
 }
