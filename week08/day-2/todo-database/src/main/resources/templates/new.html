@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<div layout:fragment="content">
+    <form method="post" name="form" id="form" action="/todo/create" role="form">
+        <div>
+            <label for="message">To Do</label>
+            <textarea rows="5" id="message" name="message"/>
+            <button type="submit" id="submit" class="btn btn primary">Submit</button>
+        </div>
+    </form>
+</div>
+</html>

@@ -30,6 +30,5 @@ public class TodoDatabaseApplication implements CommandLineRunner {
 		repository.save(new Todo("vacuum the carpet",false,false));
 		repository.save(new Todo("vacuum cleaner/hoover",true,true));
 		repository.save(new Todo("dust the furniture",true,false));
-
 	}
 }

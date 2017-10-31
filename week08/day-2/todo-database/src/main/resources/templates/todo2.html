@@ -9,6 +9,13 @@
     </tr>
 </head>
 <body>
+<!--<form action="/todo/add">-->
+    <!--<input name = "title">-->
+    <!--<input name = "isDone">-->
+    <!--<input type="submit">-->
+<!--</form>-->
+<span><a href="/todo/new">Add new Todo</a></span>
+
 <table >
     <tr>
         <th>ID</th>
@@ -21,9 +28,15 @@
         <td data-th-text="${todo.title}"   />
         <td data-th-text="${todo.isDone}"   />
         <td data-th-text="${todo.isUrgent}"   />
+
+        <td>
+            <a th:href="@{'/todo/{id}/delete'(id=${todo.id})}" class="delete" th:attr="name=${todo.title}">
+                <span class="fa-stack">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </span>
+            </a>
+        </td>
     </tr>
 </table>
-
-
 </body>
 </html>
