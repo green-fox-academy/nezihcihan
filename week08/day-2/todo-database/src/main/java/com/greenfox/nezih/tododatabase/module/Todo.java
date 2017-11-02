@@ -1,15 +1,21 @@
 package com.greenfox.nezih.tododatabase.module;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
+
+//    @OneToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "assignee_id")
+//    private Assignee assignee;
+
     public String title;
     public boolean isUrgent; // default False
     public boolean isDone; // default False

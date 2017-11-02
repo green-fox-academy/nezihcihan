@@ -1,21 +1,22 @@
 package com.greenfox.nezih.tododatabase.controller;
 
 import com.greenfox.nezih.tododatabase.module.Todo;
+import com.greenfox.nezih.tododatabase.module.TodoService;
 import com.greenfox.nezih.tododatabase.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/todo")
 public class TodoController {
     @Autowired
     TodoRepository repository;
+    private Todo todo;
 
     @RequestMapping(value = {"/list","/"}, method = RequestMethod.GET)
     public String list(Model model) {
@@ -39,13 +40,10 @@ public class TodoController {
         return  new ModelAndView("redirect:/todo/");
     }
 
-    @RequestMapping(value="/update", method = RequestMethod.POST)
-    public ModelAndView update(@RequestParam("id") long id,
-                               @RequestParam("message") String title) {
-        Todo todo = repository.findOne(id);
-        todo.setTitle(title);
-        repository.equals(todo);
-        return new ModelAndView("redirect:/todo/");
+    @RequestMapping(value="/update", method=RequestMethod.POST)
+    public String updateEntry(@ModelAttribute Todo todo){
+        repository.save(todo);
+        return "redirect:/todo/";
     }
 
     @RequestMapping(value="/{id}/edit", method = RequestMethod.GET)
@@ -55,5 +53,30 @@ public class TodoController {
         repository.equals(todo);
         return "edit";
     }
+
+    private TodoService todoService;
+
+    @Autowired
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
+    }
+    @RequestMapping("/")
+    public Iterable<Todo> list(){
+        return todoService.list();
+    }
+
+    @RequestMapping("/bytitle/{title}")
+    public List<Todo> byTitle(@PathVariable(value = "title") String title) {
+        return todoService.
+    }
+
+    
+
+
+
+
+
+
+
 }
 
