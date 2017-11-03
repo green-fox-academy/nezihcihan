@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface TodoRepository extends CrudRepository<Todo, Long> {
-    List<Todo> findByTitle(String title);
+    List<Todo> findAllByIsDone(boolean isDone);
+    List<Todo> findAllByTitle(String title);
 
 }

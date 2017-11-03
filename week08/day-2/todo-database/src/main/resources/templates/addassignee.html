@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html class="align-center" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="UTF-8"/>
+    <title>Add new assignee</title>
+</head>
+<body>
+<h3>ADD NEW ASSIGNEE</h3>
+<form action="/assignees/create" th:object="${newAssignee}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <input type="text" th:field="*{name}" placeholder="Assignee's name"/>
+    <input type="text" th:field="*{email}" placeholder="e-mail"/>
+    <button type="submit" value="Submit" th:text="'Add New Assignee'"></button>
+</form>
+
+    <p></p>
+    <span><a href="/assignees/">Assignees </a></span>
+</body>
+</html>

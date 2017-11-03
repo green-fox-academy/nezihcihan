@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:thymleleaf.com">
+<head>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="UTF-8"/>
+    <title>Assignees</title>
+</head>
+<body>
+<h3>ASSIGNEES</h3>
+<form action="assignees/addnewassignee">
+    <input type="submit" value="Add Assignee" />
+</form>
+
+<table class="assignees">
+    <thead>
+    <tr>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="assignee : ${assignees}">
+        <td th:text="${assignee.getId()}"></td>
+        <td th:text="${assignee.getName()}"></td>
+        <td th:text="${assignee.getEmail()}"></td>
+        <td><form th:action="@{'/assignees/{id}/delete'(id=${assignee.id})}" th:method="delete" >
+            <button type="submit"> Delete </button>
+        </form>
+        </td>
+        <td>
+            <form th:action="@{'/assignees/{id}/edit'(id=${assignee.id})}">
+                <button type="submit"> Edit </button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

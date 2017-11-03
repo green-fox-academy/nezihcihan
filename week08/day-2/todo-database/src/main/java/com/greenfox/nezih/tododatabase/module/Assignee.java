@@ -1,55 +1,55 @@
-//package com.greenfox.nezih.tododatabase.module;
-//
-//import org.springframework.data.annotation.Id;
-//
-//import javax.persistence.*;
-//import java.util.Set;
-//
-//@Entity
-//@Table(name = "assignees")
-//public class Assignee {
-//
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    public long id;
-//
-//    private String name;
-//
-//
-//    @ManyToMany(fetch = FetchType.LAZY)
-//    @JoinTable(name= "assignees_emails")
-//    private Set<Email> emails;
-//
-//    public long getId() {
-//        return id;
-//    }
-//
-//    public void setId(long id) {
-//        this.id = id;
-//    }
-//
-//    public Set<Email> getEmails() {
-//        return emails;
-//    }
-//
-//    public void setEmails(Set<Email> emails) {
-//        this.emails = emails;
-//    }
-//
-//    public Assignee(String name, String email) {
-//        this.name = name;
-//
-//    }
-//
-//    public Assignee() {
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//}
+package com.greenfox.nezih.tododatabase.module;
+
+
+
+import javax.persistence.*;
+
+@Entity
+public class Assignee {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+
+    private String name;
+    private String email;
+
+    @OneToOne(mappedBy = "assignee",cascade = CascadeType.ALL)
+    private Todo todo;
+
+
+    public Assignee() {
+    }
+
+    public Assignee(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+}

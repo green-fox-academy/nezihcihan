@@ -11,6 +11,8 @@
 <body>
 <span><a href="/todo/new">Add new Todo</a></span>
 <p></p>
+<span><a href="/assignees/">Assignees </a></span>
+<p></p>
 <table >
     <tr>
         <th>ID</th>
@@ -21,9 +23,8 @@
     <tr data-th-each="todo : ${todos}">
         <td data-th-text="${todo.id}"   />
         <td data-th-text="${todo.title}"   />
-        <td data-th-text="${todo.isDone}"   />
-        <td data-th-text="${todo.isUrgent}"   />
-
+        <td th:text="${todo.done}"   />
+        <td data-th-text="${todo.urgent}"   />
         <td>
             <a th:href="@{'/todo/{id}/delete'(id=${todo.id})}" class="delete" th:attr="name=${todo}">
                 <span class="fa-stack">
@@ -42,5 +43,6 @@
         </td>
     </tr>
 </table>
+
 </body>
 </html>

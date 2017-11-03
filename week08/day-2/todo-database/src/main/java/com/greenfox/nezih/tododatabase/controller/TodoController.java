@@ -1,7 +1,6 @@
 package com.greenfox.nezih.tododatabase.controller;
 
 import com.greenfox.nezih.tododatabase.module.Todo;
-import com.greenfox.nezih.tododatabase.module.TodoService;
 import com.greenfox.nezih.tododatabase.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,14 +8,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+
+import javax.persistence.Table;
 import java.util.List;
 
 @Controller
 @RequestMapping("/todo")
+
 public class TodoController {
     @Autowired
     TodoRepository repository;
-    private Todo todo;
 
     @RequestMapping(value = {"/list","/"}, method = RequestMethod.GET)
     public String list(Model model) {
@@ -54,29 +55,13 @@ public class TodoController {
         return "edit";
     }
 
-    private TodoService todoService;
 
-    @Autowired
-    public TodoController(TodoService todoService) {
-        this.todoService = todoService;
+
+    @GetMapping("/bytitle")
+    public String findByTitle(Model model, String title) {
+        List byTitle = repository.findAllByTitle(title);
+        model.addAttribute("byTitle", byTitle);
+        return "bytitle";
     }
-    @RequestMapping("/")
-    public Iterable<Todo> list(){
-        return todoService.list();
-    }
-
-    @RequestMapping("/bytitle/{title}")
-    public List<Todo> byTitle(@PathVariable(value = "title") String title) {
-        return todoService.
-    }
-
-    
-
-
-
-
-
-
-
 }
 

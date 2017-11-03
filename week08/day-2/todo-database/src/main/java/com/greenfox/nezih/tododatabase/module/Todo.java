@@ -1,27 +1,28 @@
 package com.greenfox.nezih.tododatabase.module;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private String title;
+    private boolean isUrgent; // default False
+    private boolean isDone; // default False
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
-
-//    @OneToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "assignee_id")
-//    private Assignee assignee;
-
-    public String title;
-    public boolean isUrgent; // default False
-    public boolean isDone; // default False
+    @OneToOne
+    private Assignee assignee;
 
     public Todo() {
 
+    }
+
+    public Todo(String title, boolean isUrgent, boolean isDone, Assignee assignee) {
+        this.title = title;
+        this.isUrgent = isUrgent;
+        this.isDone = isDone;
+        this.assignee = assignee;
     }
 
     public void setId(long id) {
@@ -36,6 +37,7 @@ public class Todo {
         this.title = title;
         this.isUrgent = isUrgent;
         this.isDone = isDone;
+
     }
 
     public long getId() {
@@ -68,6 +70,14 @@ public class Todo {
 
     public void setDone(boolean done) {
         isDone = done;
+    }
+
+    public Assignee getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(Assignee assignee) {
+        this.assignee = assignee;
     }
 
     @Override
