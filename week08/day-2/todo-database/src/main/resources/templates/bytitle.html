@@ -6,7 +6,7 @@
     <title>Todos Created At </title>
 </head>
 <body>
-<h3>TODOS BY TITLE</h3>
+<h3>Search Todo List</h3>
 <table>
     <thead>
     <tr align="left">
@@ -19,7 +19,6 @@
         <td th:text="${todo.getTitle()}"></td>
         <td th:text="${todo.getIsDone()} ? 'done' : 'active'"></td>
         <td th:text="${todo.getIsUrgent()} ? 'urgent' : 'not urgent'"></td>
-
         <td>
             <form th:action="@{'/todo/{id}/delete'(id=${todo.id})}" th:method="delete" >
                 <button type="submit"> Delete </button>
@@ -33,6 +32,5 @@
     </tr>
     </tbody>
 </table>
-
 </body>
 </html>

@@ -14,7 +14,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/todo")
-
+@Table(name = "todos")
 public class TodoController {
     @Autowired
     TodoRepository repository;
@@ -47,7 +47,7 @@ public class TodoController {
         return "redirect:/todo/";
     }
 
-    @RequestMapping(value="/{id}/edit", method = RequestMethod.GET)
+    @RequestMapping (value="/{id}/edit", method = RequestMethod.GET)
     public String edit(@PathVariable long id, Model model) {
         Todo todo = repository.findOne(id);
         model.addAttribute("todo", todo);
@@ -55,13 +55,11 @@ public class TodoController {
         return "edit";
     }
 
-
-
     @GetMapping("/bytitle")
     public String findByTitle(Model model, String title) {
         List byTitle = repository.findAllByTitle(title);
         model.addAttribute("byTitle", byTitle);
-        return "bytitle";
+        return "byTitle";
     }
 }
 

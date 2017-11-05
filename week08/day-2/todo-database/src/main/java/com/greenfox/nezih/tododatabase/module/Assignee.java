@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Entity
 public class Assignee {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

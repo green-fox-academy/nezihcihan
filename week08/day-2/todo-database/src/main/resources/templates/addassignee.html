@@ -6,14 +6,12 @@
     <title>Add new assignee</title>
 </head>
 <body>
-<h3>Add  Assignee</h3>
+<h3>ADD NEW ASSIGNEE</h3>
 <form action="/assignees/create" th:object="${newAssignee}" method="post">
-    <input type="hidden" th:field="*{id}"/>
-    <input type="text" th:field="*{name}" placeholder=name"/>
-    <input type="text" th:field="*{email}" placeholder="email"/>
-    <button type="submit" value="Submit" th:text="'Add Assignee'"></button>
+    <p><input type="hidden" th:field="*{id}"/></p>
+    <p><input type="text" th:field="*{name}" placeholder="name"/></p>
+    <p><input type="text" th:field="*{email}" placeholder="e-mail"/></p>
+    <p><button type="submit" value="Submit" th:text="'Add New Assignee'"></button></p>
 </form>
-    <p></p>
-    <span><a href="/assignees/">Assignees </a></span>
 </body>
 </html>

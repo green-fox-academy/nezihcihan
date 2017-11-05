@@ -7,21 +7,20 @@
 </head>
 <body>
 <h3>ASSIGNEES</h3>
-<form action="assignees/addnewassignee">
-    <input type="submit" value="Add Assignee" />
-</form>
+
 
 <table class="assignees">
-    <thead>
-    <tr>
 
-    </tr>
-    </thead>
     <tbody>
-    <tr th:each="assignee : ${assignees}">
-        <td th:text="${assignee.getId()}"></td>
-        <td th:text="${assignee.getName()}"></td>
-        <td th:text="${assignee.getEmail()}"></td>
+    <tr>
+        <th bgcolor="#fafad2">ID</th>
+        <th bgcolor="#fafad2">NAME</th>
+        <th bgcolor="#fafad2">EMAIL</th>
+    </tr>
+    <tr bgcolor="#fafad2" th:each="assignee : ${assignees}">
+        <td bgcolor="#fafad2" th:text="${assignee.getId()}"></td>
+        <td bgcolor="#fafad2" th:text="${assignee.getName()}"></td>
+        <td bgcolor="#fafad2" th:text="${assignee.getEmail()}"></td>
         <td><form th:action="@{'/assignees/{id}/delete'(id=${assignee.id})}" th:method="delete" >
             <button type="submit"> Delete </button>
         </form>
@@ -32,6 +31,13 @@
             </form>
         </td>
     </tr>
+    <thead>
+    <tr>
+        <form action="assignees/addnewassignee">
+            <input type="submit" value="Add Assignee" />
+        </form>
+    </tr>
+    </thead>
     </tbody>
 </table>
 </body>

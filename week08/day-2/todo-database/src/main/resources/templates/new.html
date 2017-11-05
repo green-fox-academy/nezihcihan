@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
 <div layout:fragment="content">
+    <h2>Add your new To Do</h2>
     <form method="post" name="form" id="form" action="/todo/create" role="form">
         <div>
-            <label for="message">To Do</label>
+            <label for="message"></label>
             <textarea rows="5" id="message" name="message"/>
-            <button type="submit" id="submit" class="btn btn primary">Submit</button>
+
+            <p><button type="submit" id="submit" class="btn btn primary">Submit</button></p>
         </div>
     </form>
 </div>

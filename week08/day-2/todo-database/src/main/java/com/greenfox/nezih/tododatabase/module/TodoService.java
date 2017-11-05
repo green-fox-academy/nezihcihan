@@ -10,7 +10,6 @@ import java.util.List;
 @Service
 public class TodoService {
 
-
     @Autowired
     TodoRepository todoRepository;
 
