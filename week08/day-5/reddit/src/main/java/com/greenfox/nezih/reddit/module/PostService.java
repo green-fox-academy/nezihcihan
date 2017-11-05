@@ -12,13 +12,13 @@ public class PostService {
     @Autowired
     PostRepository postRepository;
 
-    public void scoreUp(@PathVariable long id){
-        Post post = postRepository.findOne(id);
-        post.setScore(post.getScore()+1);
+    public void scoreUp(long id) {
+        postRepository.findOne(id).setScore(postRepository.findOne(id).getScore() + 1);
+        postRepository.save(postRepository.findOne(id));
     }
 
-    public void scoreDown(@PathVariable long id){
-        Post post = postRepository.findOne(id);
-        post.setScore(post.getScore() - 1);
+    public void scoreDown(long id) {
+        postRepository.findOne(id).setScore(postRepository.findOne(id).getScore() - 1);
+        postRepository.save(postRepository.findOne(id));
     }
 }

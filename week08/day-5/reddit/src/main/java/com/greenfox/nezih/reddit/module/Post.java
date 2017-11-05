@@ -45,4 +45,13 @@ public class Post {
     public void setId(long id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", content='" + content + '\'' +
+                ", score=" + score +
+                '}';
+    }
 }

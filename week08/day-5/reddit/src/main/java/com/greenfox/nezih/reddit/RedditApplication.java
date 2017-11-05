@@ -17,7 +17,9 @@ public class RedditApplication implements CommandLineRunner {
 	}
 	@Override
 	public void run(String... args) throws Exception {
-		postRepository.save(new Post("daily task",1));
+		for (int i = 0; i <5 ; i++) {
+			postRepository.save(new Post("post" + i, 1));
+		}
 	}
 }
 
