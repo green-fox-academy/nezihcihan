@@ -1,5 +1,6 @@
 package com.greenfox.nezih.rest.controller;
 
+import com.greenfox.nezih.rest.model.AppendA;
 import com.greenfox.nezih.rest.model.ErrorHandling;
 import com.greenfox.nezih.rest.model.Greeter;
 import com.greenfox.nezih.rest.model.Number;
@@ -26,6 +27,7 @@ public class ControllerTwo {
         }
         return errorHandling;
     }
+
     @RequestMapping(value = "/doubling", method = GET)
     public Number doubleByTwo(@RequestParam("input") int received) {
         Number number = new Number(received);
@@ -36,5 +38,11 @@ public class ControllerTwo {
     public Greeter greet(@RequestParam("name") String name, @RequestParam("title") String title) {
         Greeter greeter = new Greeter(name,title);
         return greeter;
+    }
+
+    @RequestMapping(value = "/appenda/{appendable}", method = GET)
+    public AppendA append(@PathVariable("appendable") String appendable ) {
+        AppendA appendA = new AppendA(appendable);
+        return appendA;
     }
 }
