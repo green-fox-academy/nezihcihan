@@ -2,7 +2,10 @@ package com.greenfox.nezih.rest.model;
 
 public class ErrorHandling {
 
-    String error;
+    public String error;
+
+    public ErrorHandling() {
+    }
 
     public ErrorHandling(String error) {
         this.error = error;
@@ -15,4 +18,5 @@ public class ErrorHandling {
     public void setError(String error) {
         this.error = error;
     }
+
 }

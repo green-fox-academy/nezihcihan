@@ -12,10 +12,20 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 public class ControllerTwo {
 
     @ExceptionHandler(MissingServletRequestParameterException.class)
-    public ErrorHandling handleMyException() {
-        return new ErrorHandling("Please provide an input!");
-    }
+    public ErrorHandling handleMyException(MissingServletRequestParameterException missingParam) {
+        ErrorHandling errorHandling = new ErrorHandling();
+        if(missingParam.getParameterName().equals("input")) {
+            errorHandling.setError("Please provide an input!");
+        }
+        else if (missingParam.getParameterName().equals("name")) {
+            errorHandling.setError("Please provide a name!");
+        }
+        else if (missingParam.getParameterName().equals("title")) {
+            errorHandling.setError("Please provide a title!");
 
+        }
+        return errorHandling;
+    }
     @RequestMapping(value = "/doubling", method = GET)
     public Number doubleByTwo(@RequestParam("input") int received) {
         Number number = new Number(received);
