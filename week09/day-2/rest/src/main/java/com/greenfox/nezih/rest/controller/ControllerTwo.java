@@ -14,7 +14,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @RestController
 public class ControllerTwo {
 
-    @ExceptionHandler({MissingServletRequestParameterException.class,HttpMessageNotReadableException.class})
+    @ExceptionHandler({MissingServletRequestParameterException.class,})
     public ErrorHandling handleMyException(MissingServletRequestParameterException missingParam) {
         ErrorHandling errorHandling = new ErrorHandling();
         if(missingParam.getParameterName().equals("input")) {
@@ -26,11 +26,13 @@ public class ControllerTwo {
         else if (missingParam.getParameterName().equals("title")) {
             errorHandling.setError("Please provide a title!");
         }
-        else if (missingParam.getParameterName().equals("doUntil")) {
-            errorHandling.setError("Please provide a number!");
-        }
         return errorHandling;
     }
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public String handleMyException2() {
+        return "Please provide a number!";
+    }
+
 
     @RequestMapping(value = "/doubling", method = GET)
     public Number doubleByTwo(@RequestParam("input") int received) {
@@ -63,6 +65,32 @@ public class ControllerTwo {
             int temp = 1;
             for (int i = 1; i <= doUntil.getUntil(); i++) {
                 temp = temp * i;
+            }
+            result.setResult(temp);
+        }
+        return result;
+    }
+    @RequestMapping(value = "/arrays/{what}", method = POST)
+    public Result arrayHandler(@PathVariable("what") String what, @RequestBody ArrayHandler arrayHandler) {
+        Result result = new Result();
+        if(what.equals("sum")) {
+            int temp = 0;
+            for (int i = 0; i < arrayHandler.getNumbers().size() ; i++) {
+                temp = temp + arrayHandler.getNumbers().get(i);
+            }
+            result.setResult(temp);
+        }
+        else if(what.equals("multiply")) {
+            int temp = 1;
+            for (int i = 0; i < arrayHandler.getNumbers().size(); i++) {
+                temp = temp * arrayHandler.getNumbers().get(i);
+            }
+            result.setResult(temp);
+        }
+        else if(what.equals("double")) {
+            int temp = 1;
+            for (int i = 0; i < arrayHandler.getNumbers().size(); i++) {
+                arrayHandler. temp * arrayHandler.getNumbers().get(i);
             }
             result.setResult(temp);
         }
