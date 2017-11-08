@@ -70,29 +70,28 @@ public class ControllerTwo {
         }
         return result;
     }
-    @RequestMapping(value = "/arrays/{what}", method = POST)
-    public Result arrayHandler(@PathVariable("what") String what, @RequestBody ArrayHandler arrayHandler) {
+
+    @RequestMapping(value = "/arrays", method = POST)
+    public Result arrayHandler(@RequestBody ArrayHandler arrayHandler) {
         Result result = new Result();
-        if(what.equals("sum")) {
+        if(arrayHandler.getWhat().equals("sum")) {
             int temp = 0;
             for (int i = 0; i < arrayHandler.getNumbers().size() ; i++) {
                 temp = temp + arrayHandler.getNumbers().get(i);
             }
             result.setResult(temp);
         }
-        else if(what.equals("multiply")) {
+        else if(arrayHandler.getWhat().equals("multiply")) {
             int temp = 1;
             for (int i = 0; i < arrayHandler.getNumbers().size(); i++) {
                 temp = temp * arrayHandler.getNumbers().get(i);
             }
             result.setResult(temp);
         }
-        else if(what.equals("double")) {
-            int temp = 1;
+        else if(arrayHandler.getWhat().equals("double")) {
             for (int i = 0; i < arrayHandler.getNumbers().size(); i++) {
-                arrayHandler. temp * arrayHandler.getNumbers().get(i);
+                result.getResultList().add(arrayHandler.getNumbers().get(i)*2);
             }
-            result.setResult(temp);
         }
         return result;
     }

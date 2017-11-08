@@ -4,14 +4,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ArrayHandler {
-
+    String what;
     ArrayList<Integer> numbers;
 
-    public ArrayHandler(int a,int b,int c,int d) {
-       numbers = new ArrayList<>(Arrays.asList(a,b,c,d));
+    public ArrayHandler() {
+
     }
 
-    public ArrayHandler() {
+    public ArrayHandler(String what, ArrayList<Integer> numbers) {
+        this.what = what;
+        this.numbers = numbers;
+    }
+
+    public String getWhat() {
+        return what;
+    }
+
+    public void setWhat(String what) {
+        this.what = what;
     }
 
     public ArrayList<Integer> getNumbers() {
