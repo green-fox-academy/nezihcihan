@@ -67,4 +67,21 @@ public class GuardiansApplicationTests {
 				.andExpect(jsonPath("$.error", is("I am Groot!")));
 //				.andExpect(jsonPath("$.translated", is("I am Groot!")));
 	}
+	@Test
+	public void yondu() throws Exception {
+		mockMvc.perform(get("/yondu?distance=100&time=10"))
+				.andExpect(status().isOk())
+				.andExpect(content().contentType(contentType))
+				.andExpect(jsonPath("$.distance", is(100.0)))
+				.andExpect(jsonPath("$.time", is(10.0)))
+				.andExpect(jsonPath("$.speed", is(10.0)));
+	}
+
+	@Test
+	public void yonduTimeZero() throws Exception {
+		mockMvc.perform(get("/yondu?distance=100&time=0"))
+				.andExpect(status().isOk())
+				.andExpect(content().contentType(contentType))
+				.andExpect(jsonPath("$.error", is("Time can not be zero!")));
+	}
 }
